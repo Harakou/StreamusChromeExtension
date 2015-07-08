@@ -53,7 +53,7 @@
     // Without a Referer - YouTube will reject most requests to play music.
     _onChromeWebRequestBeforeSendHeaders: function(info) {
       var refererRequestHeader = this._getHeader(info.requestHeaders, 'Referer');
-      var referer = 'https://streamus.com/';
+      var referer = 'https://www.youtube.com/';
 
       if (_.isUndefined(refererRequestHeader)) {
         info.requestHeaders.push({
