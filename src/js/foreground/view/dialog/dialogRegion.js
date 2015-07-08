@@ -20,13 +20,11 @@
       this.listenTo(this.player, 'youTubeError', this._onPlayerYouTubeError);
       this.listenTo(this.signInManager, 'change:needLinkUserId', this._onSignInManagerChangeNeedLinkUserId);
       this.listenTo(this.signInManager, 'change:needGoogleSignIn', this._onSignInManagerChangeNeedGoogleSignIn);
-      chrome.runtime.onUpdateAvailable.addListener(this._onChromeRuntimeUpdateAvailable.bind(this));
     },
 
     _onForegroundAreaIdle: function() {
       this._showDialogIfNeedGoogleSignIn();
       this._showDialogIfNeedLinkUserId();
-      this._showDialogIfUpdateAvailable();
     },
 
     // Make sure Streamus stays up to date because if my Server de-syncs people won't be able to save properly.
